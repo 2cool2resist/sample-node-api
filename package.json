@@ -1,0 +1,37 @@
+{
+  "name": "sample-node-api",
+  "version": "1.0.0",
+  "description": "Simple POST Parsing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "dev:https": "nodemon src/index.js --key sslcert/server.key --cert sslcert/server.cert",
+    "start": "node src/index.js",
+    "build": "npm run clean && cp -r src dist/src && cp -r bin dist/bin && cp *.yml dist && cp *.json dist && cp README.md dist",
+    "clean": "rimraf dist && mkdirp dist",
+    "test": "nyc mocha 'src/test/*.js'",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test"
+  },
+  "author": "",
+  "license": "EPL-2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "supertest": "^6.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "yargs": "^14.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mkdirp": "^1.0.3",
+    "mocha": "^8.2.1",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "axios": "^0.21.0",
+    "should": "^13.2.3"
+  }
+}
